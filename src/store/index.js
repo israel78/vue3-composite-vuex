@@ -1,6 +1,4 @@
 import { createStore } from 'vuex'
-import {computed} from "vue";
-import {store} from "core-js/internals/reflect-metadata";
 
 export default createStore({
   state: {

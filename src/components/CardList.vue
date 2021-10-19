@@ -1,7 +1,8 @@
 <template>
 <div class="row">
-  <div class="col-12">
-{{paises}}
+  <div class="col-12"
+  v-for="pais in paises" key="pais.name">
+    <Card :pais="pais"/>
   </div>
 </div>
 
@@ -10,8 +11,9 @@
 <script>
 import {computed, onMounted} from 'vue'
 import {useStore} from 'vuex'
-import {store} from "core-js/internals/reflect-metadata";
+import Card from "./Card";
 export default {
+  components: {Card},
   setup(){
     const store = useStore()
     const paises = computed(()=>{
